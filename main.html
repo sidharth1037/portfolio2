@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidharth Dev Lal</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <div class="nav-profile hidden">
+                    <img src="assets/profile.jpg" alt="Profile" class="nav-profile-pic">
+                    <div class="logo">Sidharth</div>
+                </div>
+            </div>
+            <button class="nav-toggle" aria-label="Open navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="landing fade-in">
+            <div class="landing-flex">
+                <img src="assets/profile.jpg" alt="Profile" class="profile-pic">
+                <div class="landing-greeting">
+                    <h1>Hi, I am <span class="name">Sidharth Dev Lal</span></h1>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+
+        <section id="about" class="section fade-in-up">
+            <h2><i class="fa-solid fa-user fa-fw section-icon"></i> About Me</h2>
+            <div class="card">
+                <p>
+                    I enjoy solving problems and working with others to get things done. I’m good at helping my team, supporting
+                    others whenever possible, and making sure we stay focused on what needs to be done. I like learning new things
+                    and take on challenges with confidence. I have also taken part in different activities at my college and in larger
+                    groups, and I keep improving my skills step by step.
+                </p>
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+
+        <section id="achievements" class="section fade-in-up">
+            <h2><i class="fa-solid fa-trophy fa-fw section-icon"></i> Achievements</h2>
+            <div class="card-list">
+                <div class="card">
+                    <strong>Finalist, SIGHT 2.0 - Hackathon</strong><br>
+                    UST Global, Mar-May 2025<br>
+                    <span class="card-desc">One of 14 Finalists among 1000 Teams in India</span>
+                </div>
+                <div class="card">
+                    <strong>First Prize, &lt;Hackengers&gt; Hackathon</strong><br>
+                    Livewire India, May 2024
+                </div>
+                <div class="card">
+                    <strong>Smart India Hackathon Prelims</strong><br>
+                    IEDC SJCET Palai, Sep 2024
+                </div>
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+
+        <section id="projects" class="section fade-in-up">
+            <h2><i class="fa-solid fa-diagram-project fa-fw section-icon"></i> Projects</h2>
+            <div class="card-list">
+                <div class="card">
+                    <h3>Neighbourly</h3>
+                    <p><strong>Tech:</strong> Flutter, Firebase, Firestore</p>
+                    <ul>
+                        <li>Cross-platform mobile application to connect volunteers with elderly or home-bound individuals who need assistance with tasks such as shopping, medication pickup, transport etc.</li>
+                        <li>A social project for addressing the isolation of elders.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Duplicate Download Blocker</h3>
+                    <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+                    <ul>
+                        <li>Lightweight browser extension for preventing duplicate downloads by checking if the same download URL was already accessed.</li>
+                        <li>Designed with minimal performance impact and ease of use.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+
+        <section id="skills" class="section fade-in-up">
+            <h2><i class="fa-solid fa-code fa-fw section-icon"></i> Skills</h2>
+            <div class="card">
+                <ul class="skills-list">
+                    <li>Python</li>
+                    <li>C</li>
+                    <li>Flutter</li>
+                    <li>JavaScript</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>Firebase</li>
+                    <li>Git</li>
+                    <li>GitHub</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+
+        <section id="education" class="section fade-in-up">
+            <h2><i class="fa-solid fa-graduation-cap fa-fw section-icon"></i> Education</h2>
+            <div class="card-list">
+                <div class="card">
+                    <strong>St. Joseph's College of Engineering and Technology Palai</strong><br>
+                    B.Tech in Computer Science and Engineering (2022 - 2026)<br>
+                    Current GPA: 8.72<br>
+                    Pursuing Minor Degree in Robotics and Automation
+                </div>
+                <div class="card">
+                    <strong>MGM NSS HSS Lakkattoor</strong><br>
+                    Higher Secondary Education (2020 - 2022)
+                </div>
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+
+        <section id="contact" class="section fade-in-up">
+            <h2><i class="fa-solid fa-envelope fa-fw section-icon"></i> Contact Me</h2>
+            <div class="card">
+                <form id="contactForm">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <!-- Add your email in the script.js file -->
+                    <button type="submit">Send</button>
+                </form>
+                <div id="formMessage"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <!-- Your Name --> 2024</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
