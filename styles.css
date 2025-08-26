@@ -1,0 +1,530 @@
+:root {
+    --red: #e53935;
+    --black: #181818;
+    --white: #fff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--white);
+    color: var(--black);
+}
+
+header {
+    background: var(--black);
+    color: var(--white);
+    padding: 0.25rem 0;
+    min-height: 56px;
+    transition: min-height 0.2s;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px 0 rgba(24,24,24,0.07);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+    min-height: 56px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+    z-index: 2;
+    white-space: nowrap;
+}
+
+.nav-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity 0.3s, visibility 0.3s;
+    opacity: 1;
+    visibility: visible;
+    z-index: 3;
+    position: static;
+    left: unset;
+    top: unset;
+    transform: none;
+}
+
+.nav-profile.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.nav-profile-pic {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--red);
+    background: var(--white);
+}
+
+.nav-profile-name {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    display: block;
+    padding: 0.5rem 0.2rem;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.landing {
+    text-align: center;
+    margin: 3rem 0 4rem 0;
+}
+
+.landing-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--red);
+    box-shadow: 0 4px 24px 0 rgba(229,57,53,0.10);
+    background: var(--white);
+    transition: transform 0.3s;
+    animation: card-pop 0.7s cubic-bezier(.4,2,.6,1) both;
+}
+
+.landing-greeting {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.landing h1 {
+    font-size: 2.5rem;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+}
+
+.landing .name {
+    color: var(--red);
+    font-weight: bold;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h2 {
+    color: var(--red);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    color: var(--black);
+    margin-top: 1.5rem;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+.skills-list li {
+    background: var(--black);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+
+.project {
+    background: #f8f8f8;
+    border-left: 5px solid var(--red);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#contact input, #contact textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+#contact button {
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+#contact button:hover {
+    background: var(--black);
+}
+
+#formMessage {
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--red);
+    font-weight: bold;
+}
+
+footer {
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    font-size: 1rem;
+}
+
+.section {
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.section-separator {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, var(--red), var(--black), var(--red));
+    margin: 2.5rem 0;
+    opacity: 0.15;
+    border-radius: 2px;
+}
+
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: flex-start;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px 0 rgba(24,24,24,0.08);
+    padding: 1.5rem 1.25rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid var(--red);
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 220px;
+    flex: 1 1 260px;
+    animation: card-pop 0.7s cubic-bezier(.4,2,.6,1) both;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 8px 32px 0 rgba(229,57,53,0.12);
+}
+
+.card-desc {
+    color: var(--black);
+    font-size: 0.98rem;
+    opacity: 0.8;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1s ease-in forwards;
+}
+.section:nth-of-type(odd).fade-in-up {
+    animation-delay: 0.2s;
+}
+.section:nth-of-type(even).fade-in-up {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes card-pop {
+    0% { transform: scale(0.95) translateY(30px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* Adjustments for cards in forms and skills */
+#contact .card, #skills .card {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+#skills .skills-list {
+    justify-content: flex-start;
+    gap: 0.75rem;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 1rem;
+    z-index: 101;
+}
+
+.nav-toggle-bar {
+    width: 26px;
+    height: 3px;
+    background: var(--white);
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: all 0.3s;
+    display: block;
+}
+
+@media (max-width: 700px) {
+    nav {
+        flex-direction: row;
+        align-items: center;
+        min-height: unset;
+    }
+    .nav-left {
+        justify-content: flex-start;
+        margin-bottom: 0;
+        align-items: center;
+        height: 48px; /* slightly reduced */
+    }
+    .nav-profile {
+        align-items: center;
+        height: 48px;
+        display: flex;
+    }
+    .nav-profile-pic {
+        margin-top: 0;
+        margin-bottom: 0;
+        align-self: center;
+        width: 30px;
+        height: 30px;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        height: 48px;
+        font-size: 1.1rem;
+    }
+    .nav-toggle {
+        display: flex;
+        width: 38px;
+        height: 38px;
+    }
+    .nav-toggle-bar {
+        width: 22px;
+        height: 2.5px;
+        margin: 2px 0;
+    }
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: var(--black);
+        flex-direction: column;
+        gap: 0;
+        box-shadow: 0 8px 24px 0 rgba(24,24,24,0.13);
+        z-index: 100;
+        padding: 0.3rem 0 0.5rem 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        animation: fadeIn 0.3s;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+    .nav-links li {
+        width: 100%;
+        text-align: left;
+        padding: 0.1rem 0;
+        margin-left: 1.2rem;
+    }
+    .nav-links li a {
+        width: 100%;
+        display: block;
+        padding: 0.5rem 0;
+        font-size: 1rem;
+    }
+    nav ul {
+        gap: 0;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+    }
+
+    main {
+        padding: 0 0.2rem;
+        margin: 1rem auto;
+        max-width: 100vw;
+    }
+    .landing {
+        margin: 1.2rem 0 1.5rem 0;
+    }
+    .landing-flex {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .profile-pic {
+        width: 64px;
+        height: 64px;
+        border-width: 2px;
+        box-shadow: 0 2px 8px 0 rgba(229,57,53,0.08);
+    }
+    .landing-greeting {
+        align-items: center;
+    }
+    .landing h1 {
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem;
+    }
+    section {
+        margin-bottom: 1.2rem;
+    }
+    h2 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    h3 {
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+    .skills-list {
+        gap: 0.3rem;
+    }
+    .skills-list li {
+        padding: 0.3rem 0.7rem;
+        font-size: 0.95rem;
+    }
+    .card-list {
+        gap: 0.5rem;
+    }
+    .card {
+        padding: 0.7rem 0.5rem;
+        margin-bottom: 0.5rem;
+        min-width: 0;
+        font-size: 0.97rem;
+        height: auto;           /* Ensure height is dynamic */
+        min-height: 0;          /* Remove any minimum height */
+        display: block;         /* Remove any flex/grid that could stretch */
+        box-sizing: border-box; /* Ensure padding doesn't add extra height */
+    }
+    .card-list .card {
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.3rem;
+    }
+    .card > *:last-child {
+        margin-bottom: 0 !important;
+    }
+    #contact .card, #skills .card {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .section-separator {
+        margin: 0.8rem 0;
+    }
+    #contact form {
+        gap: 0.5rem;
+        max-width: 100%;
+    }
+    #contact input, #contact textarea {
+        padding: 0.5rem;
+        font-size: 0.97rem;
+    }
+    #contact button {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    footer {
+        padding: 0.5rem 0;
+        font-size: 0.95rem;
+        margin-top: 1rem;
+    }
+}
+
+/* Add scroll-padding for anchor navigation */
+html {
+    scroll-padding-top: 60px; /* slightly more than navbar height */
+}
+
+@media (max-width: 900px) {
+    .card-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .card {
+        min-width: 0;
+    }
+}
