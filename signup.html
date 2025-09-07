@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background:
+                radial-gradient(circle at 80% 10%, #e5393522 0%, #fff0 60%),
+                radial-gradient(circle at 20% 90%, #18181818 0%, #fff0 60%),
+                radial-gradient(ellipse at 50% 60%, #ffbfae33 0%, #fff0 70%),
+                linear-gradient(120deg, #fff 0%, #fff 60%, #e5393522 100%);
+            color: var(--black);
+        }
+        .signup-container {
+            max-width: 480px;
+            margin: 2.5rem auto;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 16px 0 rgba(24,24,24,0.10);
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+            border-left: 5px solid var(--red);
+        }
+        .signup-container h2 {
+            color: var(--red);
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+        .signup-form label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+        .signup-form input,
+        .signup-form select,
+        .signup-form textarea {
+            width: 100%;
+            padding: 0.6rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+        .signup-form input[type="checkbox"],
+        .signup-form input[type="radio"] {
+            width: auto;
+            margin-right: 0.5em;
+        }
+        .signup-form .form-group {
+            margin-bottom: 1rem;
+        }
+        .signup-form .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+        .signup-form .form-row > .form-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+        .signup-form button {
+            background: var(--red);
+            color: var(--white);
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+        .signup-form button:hover {
+            background: var(--black);
+            color: var(--red);
+        }
+        .signup-success {
+            color: var(--red);
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 1.5rem;
+        }
+        .go-back-btn {
+            display: inline-block;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            border-radius: 18px;
+            padding: 0.4rem 1.1rem;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.18s;
+        }
+        .go-back-btn:hover,
+        .go-back-btn:focus {
+            transform: scale(1.07);
+        }
+        @media (max-width: 600px) {
+            .signup-container {
+                padding: 1.2rem 0.5rem 1rem 0.5rem;
+            }
+            .signup-form .form-row {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <a href="index.html" class="go-back-btn">&larr; Go Back</a>
+        <h2>Sign Up</h2>
+        <form class="signup-form" id="signupForm" autocomplete="off">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="fname" required>
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lname" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                        <option>Prefer not to say</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select id="country" name="country" required>
+                        <option value="">Select</option>
+                        <option>India</option>
+                        <option>USA</option>
+                        <option>UK</option>
+                        <option>Canada</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Languages Known</label>
+                <input type="checkbox" name="lang" value="English"> English
+                <input type="checkbox" name="lang" value="Hindi"> Hindi
+                <input type="checkbox" name="lang" value="Malayalam"> Malayalam
+                <input type="checkbox" name="lang" value="Other"> Other
+            </div>
+            <div class="form-group">
+                <label>Differently abled</label>
+                <input type="radio" name="differentlyAbled" value="Yes" required> Yes
+                <input type="radio" name="differentlyAbled" value="No"> No
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10,15}" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="2" required></textarea>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="pincode">Pincode</label>
+                <input type="text" id="pincode" name="pincode" pattern="[0-9]{4,10}" required>
+            </div>
+            <div class="form-group">
+                <label for="education">Highest Education</label>
+                <select id="education" name="education" required>
+                    <option value="">Select</option>
+                    <option>High School</option>
+                    <option>Diploma</option>
+                    <option>Graduate</option>
+                    <option>Post Graduate</option>
+                    <option>PhD</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="skills">Skills</label>
+                <input type="text" id="skills" name="skills">
+            </div>
+            <div class="form-group">
+                <label for="about">About You</label>
+                <textarea id="about" name="about" rows="2"></textarea>
+            </div>
+            <button type="submit">Sign Up</button>
+            <div id="signupSuccess" class="signup-success" style="display:none;">Sign Up Successful!</div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('signupSuccess').style.display = 'block';
+            this.reset();
+        });
+    </script>
+</body>
+</html>

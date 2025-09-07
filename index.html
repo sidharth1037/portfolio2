@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sidharth Dev Lal</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Add Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
@@ -17,11 +16,6 @@
                     <div class="logo">Sidharth</div>
                 </div>
             </div>
-            <button class="nav-toggle" aria-label="Open navigation">
-                <span class="nav-toggle-bar"></span>
-                <span class="nav-toggle-bar"></span>
-                <span class="nav-toggle-bar"></span>
-            </button>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#achievements">Achievements</a></li>
@@ -30,6 +24,12 @@
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <a href="signup.html" class="signup-btn" target="_blank">Sign Up</a>
+            <button class="nav-toggle" aria-label="Open navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
         </nav>
     </header>
     <main>
@@ -143,20 +143,14 @@
         <section id="contact" class="section fade-in-up">
             <h2><i class="fa-solid fa-envelope fa-fw section-icon"></i> Contact Me</h2>
             <div class="card">
-                <form id="contactForm">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <!-- Add your email in the script.js file -->
-                    <button type="submit">Send</button>
-                </form>
-                <div id="formMessage"></div>
+                <a href="mailto:mailid@gmail.com" class="contact-mail-btn">Send Email</a>
             </div>
         </section>
     </main>
     <footer>
-        <p>&copy; <!-- Your Name --> 2024</p>
+        <p>&copy; Sidharth Dev Lal 2024</p>
     </footer>
     <script src="script.js"></script>
 </body>
 </html>
+

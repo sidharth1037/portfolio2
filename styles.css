@@ -7,7 +7,11 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: var(--white);
+    background:
+        radial-gradient(circle at 80% 10%, #e5393522 0%, #fff0 60%),
+        radial-gradient(circle at 20% 90%, #18181818 0%, #fff0 60%),
+        radial-gradient(ellipse at 50% 60%, #ffbfae33 0%, #fff0 70%),
+        linear-gradient(120deg, #fff 0%, #fff 60%, #e5393522 100%);
     color: var(--black);
 }
 
@@ -25,13 +29,14 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 1rem;
     position: relative;
     min-height: 56px;
+    gap: 0.5rem;
 }
 
 .nav-left {
@@ -39,6 +44,7 @@ nav {
     align-items: center;
     gap: 1rem;
     min-width: 0;
+    margin-right: auto;
 }
 
 .logo {
@@ -161,6 +167,7 @@ section {
 h2 {
     color: var(--red);
     margin-bottom: 1rem;
+    margin-left: 1.2rem;
 }
 
 h3 {
@@ -270,9 +277,12 @@ footer {
     margin-bottom: 1rem;
     border-left: 5px solid var(--red);
     transition: transform 0.2s, box-shadow 0.2s;
-    min-width: 220px;
-    flex: 1 1 260px;
     animation: card-pop 0.7s cubic-bezier(.4,2,.6,1) both;
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
 }
 
 .card:hover {
@@ -313,15 +323,12 @@ footer {
     100% { transform: scale(1) translateY(0); opacity: 1; }
 }
 
-/* Adjustments for cards in forms and skills */
-#contact .card, #skills .card {
+#contact .card,
+#skills .card {
     max-width: 450px;
     margin: 0 auto;
-}
-
-#skills .skills-list {
-    justify-content: flex-start;
-    gap: 0.75rem;
+    margin-left: 1.2rem;
+    margin-right: 1.2rem;
 }
 
 .nav-toggle {
@@ -348,17 +355,63 @@ footer {
     display: block;
 }
 
+.signup-btn {
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 2%;
+    margin-right: 0;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.18s;
+    box-shadow: 0 2px 8px 0 rgba(229,57,53,0.08);
+    display: inline-block;
+    vertical-align: middle;
+    order: 2;
+}
+
+.signup-btn:hover,
+.signup-btn:focus {
+    transform: scale(1.07);
+}
+
+.contact-mail-btn {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    border-radius: 20px;
+    padding: 0.7rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.18s;
+    margin: 0.5rem auto 0.2rem auto;
+    text-align: center;
+}
+
+.contact-mail-btn:hover,
+.contact-mail-btn:focus {
+    transform: scale(1.07);
+}
+
 @media (max-width: 700px) {
     nav {
         flex-direction: row;
         align-items: center;
         min-height: unset;
+        gap: 0;
     }
     .nav-left {
         justify-content: flex-start;
         margin-bottom: 0;
         align-items: center;
-        height: 48px; /* slightly reduced */
+        height: 48px;
     }
     .nav-profile {
         align-items: center;
@@ -456,6 +509,7 @@ footer {
     h2 {
         font-size: 1.1rem;
         margin-bottom: 0.5rem;
+        margin-left: 1rem;
     }
     h3 {
         font-size: 1rem;
@@ -472,14 +526,18 @@ footer {
         gap: 0.5rem;
     }
     .card {
-        padding: 0.7rem 0.5rem;
+        padding: 0.7rem 1.1rem;
         margin-bottom: 0.5rem;
         min-width: 0;
         font-size: 0.97rem;
-        height: auto;           /* Ensure height is dynamic */
-        min-height: 0;          /* Remove any minimum height */
-        display: block;         /* Remove any flex/grid that could stretch */
-        box-sizing: border-box; /* Ensure padding doesn't add extra height */
+        height: auto;
+        min-height: 0;
+        display: block;
+        box-sizing: border-box;
+        width: auto;
+        max-width: 100%;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
     .card-list .card {
         padding-bottom: 0.5rem;
@@ -490,7 +548,7 @@ footer {
     }
     #contact .card, #skills .card {
         max-width: 100%;
-        margin: 0 auto;
+        margin: 0 1rem;
     }
     .section-separator {
         margin: 0.8rem 0;
@@ -514,9 +572,8 @@ footer {
     }
 }
 
-/* Add scroll-padding for anchor navigation */
 html {
-    scroll-padding-top: 60px; /* slightly more than navbar height */
+    scroll-padding-top: 60px;
 }
 
 @media (max-width: 900px) {
